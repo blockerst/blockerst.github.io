@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>wire — a private, local reader for your own newsletters</title>
+<meta name="description" content="wire is a single-user desktop application that reads the newsletters in its owner's own Gmail mailbox, indexes them on that person's computer, and answers questions about them offline.">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<main>
+  <span class="pill">Personal project · single user · runs on one Mac</span>
+  <h1>wire</h1>
+  <p class="lede">A desktop application that reads the newsletters in my own Gmail mailbox,
+  indexes them on my own computer, and answers questions about them — entirely offline.</p>
+
+  <h2>What it does</h2>
+  <p>I subscribe to more financial and technology newsletters than I can read. wire collects the
+  ones I have explicitly listed by sender address, stores them on my Mac, and lets me ask questions
+  across them: what a given week said about a company, which topics recurred, which tickers were
+  discussed most. The answers cite the emails they came from.</p>
+  <p>It runs as a scheduled job on a single machine at home. There is no website to sign in to, no
+  account to create, no server that holds anyone's mail. The only person who uses it is me.</p>
+
+  <h2>How it reaches Gmail</h2>
+  <p>wire signs in with Google OAuth and requests exactly one permission:</p>
+  <table>
+    <tr><th>Scope</th><th>Why</th></tr>
+    <tr>
+      <td><code>gmail.readonly</code></td>
+      <td>To download the newsletters sent by the addresses I have configured. Read-only: wire
+      cannot send, delete, modify, or label anything in the mailbox.</td>
+    </tr>
+  </table>
+  <p>No other scope is requested, and no other Google service is touched. The access can be
+  withdrawn at any time from
+  <a href="https://myaccount.google.com/permissions">Google Account → Third-party access</a>.</p>
+
+  <h2>Where the data goes</h2>
+  <p>Nowhere. Messages are stored on the computer that runs wire and are analysed by a language
+  model running locally on that same computer. Email content is not sent to any external API, is
+  not used to train anything, and is not shared with anyone.</p>
+
+  <h2>Privacy</h2>
+  <p>The full statement is on the <a href="privacy/">privacy policy</a> page, including the
+  Limited Use disclosure required for Google API data.</p>
+
+  <hr>
+  <footer>
+    <p>Built and used by Göktuğ Yılmaz. Questions:
+    <a href="mailto:goktugyilmaz01@gmail.com">goktugyilmaz01@gmail.com</a>.</p>
+    <p>This page is static, serves no cookies, loads nothing from third parties, and collects no
+    analytics.</p>
+  </footer>
+</main>
+</body>
+</html>
